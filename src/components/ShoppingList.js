@@ -21,12 +21,12 @@ function ShoppingList({ items }) {
 
   //const[allItems, setAllItems] = useState(itemsToDisplay)
 
-const categoryList = itemsToDisplay.map((item) => (
+/*const categoryList = itemsToDisplay.map((item) => (
 
     <Item key={item.id} name={item.name} category={item.category} />
 
 ))
-./*function handleSelectCategory(){
+.function handleSelectCategory(){
   setAllItems(categoryList)
 }*/
   
@@ -42,7 +42,9 @@ const categoryList = itemsToDisplay.map((item) => (
         </select>
       </div>
       <ul className="Items">
-       {categoryList}
+      {itemsToDisplay.map((item) => (
+          <Item key={item.id} name={item.name} category={item.category} />
+        ))}
       </ul>
     </div>
   );
